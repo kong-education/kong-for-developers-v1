@@ -1,23 +1,23 @@
 _id: spc_23d31c89acf14e448c2dc70aa761f01c
 type: ApiSpec
 parentId: wrk_154ea4f007644f2ea5c8f095f4fd8baa
-modified: 1670514099440
+modified: 1670602795222
 created: 1667398652421
-fileName: Transactions API of BanKonG
+fileName: Transactions API of BanKonG - MASTER
 contents: >+
   openapi: 3.0.2
 
   info:
     version: 1.1.1
-    title: Transactions API of BanKonG
+    title: Transactions API of BanKonG v1.1.1
     description: | 
       This API provides you access to the transactions of a logged in user. You can get, create, change and delete transactions (of course always depending on permissions).
-      
-      :closed_lock_with_key: this api is protected by either OpenID Connect or api-key
     
+      :closed_lock_with_key: this api is protected by either OpenID Connect or api-key
       :bulb: this API is rate limited
   servers: 
-
+    - url: http://localhost:3000/api/v1/
+      description: local sandbox environment  
   #   - url: http://bankong.service-connectivity.com/api/v1/
 
   #     description: production on multi-zone-mesh system
@@ -25,8 +25,7 @@ contents: >+
   #   - url: http://backend-transactions.bankong/api/v1/
 
   #     description: Lab environment
-    - url: http://localhost:3000/api/v1/
-      description: local sandbox environment  
+
   #   - url: http://backend-transactions.bankong:3000/api/v1/
 
   #     description: local sandbox environment  
