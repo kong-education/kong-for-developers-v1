@@ -1,7 +1,7 @@
 _id: spc_23d31c89acf14e448c2dc70aa761f01c
 type: ApiSpec
 parentId: wrk_154ea4f007644f2ea5c8f095f4fd8baa
-modified: 1670602795222
+modified: 1670837798339
 created: 1667398652421
 fileName: Transactions API of BanKonG - MASTER
 contents: >+
@@ -40,6 +40,7 @@ contents: >+
     /transactions:
       get:
         description: Lists all transactions
+        summary: List all transactions
         tags: ["Transactions"]
         operationId: "listTranactions"
         responses:
@@ -51,6 +52,7 @@ contents: >+
                   $ref: "#/components/schemas/TransactionsList"
       post:
         description: Initiate a transaction
+        summary: Create new transaction
         tags: ["Transactions"]
         operationId: "initiate a a tranaction"
         requestBody:
@@ -69,6 +71,7 @@ contents: >+
     /transactions/{id}:
       get:
         description: Returns a post by id
+        summary: Get specific transactions
         tags: ["Transactions"]
         operationId: "getTransaction"
         parameters:
@@ -87,33 +90,60 @@ contents: >+
                   $ref: "#/components/schemas/Transaction"
           "404":
             description: Transaction not found
-      patch:
-        description: Change a transaction
-        tags: ["Transactions"]
-        operationId: "changeTransaction"
-        requestBody:
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: "#/components/schemas/Transaction"
-        parameters:
-          - name: id
-            in: path
-            required: true
-            description: The transaction id.
-            schema:
-              $ref: "#/components/schemas/TransactionId"
-        responses:
-          "200":
-            description: Transaction changed
-            content:
-              "application/json":
-                schema:
-                  $ref: "#/components/schemas/Transaction"
-          "404":
-            description: Transaction not found
+  #    patch:
+
+  #       description: Change a transaction
+
+  #       summary: Update a transaction
+
+  #       tags: ["Transactions"]
+
+  #       operationId: "changeTransaction"
+
+  #       requestBody:
+
+  #         content:
+
+  #           application/json; charset=utf-8:
+
+  #             schema:
+
+  #               $ref: "#/components/schemas/Transaction"
+
+  #       parameters:
+
+  #         - name: id
+
+  #           in: path
+
+  #           required: true
+
+  #           description: The transaction id.
+
+  #           schema:
+
+  #             $ref: "#/components/schemas/TransactionId"
+
+  #       responses:
+
+  #         "200":
+
+  #           description: Transaction changed
+
+  #           content:
+
+  #             "application/json":
+
+  #               schema:
+
+  #                 $ref: "#/components/schemas/Transaction"
+
+  #         "404":
+
+  #           description: Transaction not found
       delete:
         description: Cancel a transaction
+        summary: Cancel a transaction
         tags: ["Transactions"]
         operationId: "cancelTransaction"
         parameters:
