@@ -1,7 +1,7 @@
 _id: spc_23d31c89acf14e448c2dc70aa761f01c
 type: ApiSpec
 parentId: wrk_154ea4f007644f2ea5c8f095f4fd8baa
-modified: 1670860516370
+modified: 1670861210011
 created: 1667398652421
 fileName: Transactions API of BanKonG - MASTER
 contents: >+
@@ -38,7 +38,7 @@ contents: >+
     
   paths:
     /transactions:
-     get:
+      get
         description: Lists all transactions
         summary: List all transactions
         tags: ["Transactions"]
